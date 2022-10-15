@@ -1,6 +1,6 @@
 :root {
   --width-mobile: 375px;
-  --width-desktop: 1440px;
+  --width-tablet: 720px;
 
   --primary-red: hsl(1, 90%, 64%);
   --primary-blue: hsl(219, 85%, 26%);
@@ -28,7 +28,7 @@
 
   color-scheme: light dark;
   color: #000;
-  background-color: #fff;
+  background-color: #f9fafe;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -53,5 +53,124 @@ h1 {
 #app {
   width: 100%;
   max-width: var(--width-mobile);
-  margin: 0 auto;
+  padding: 16px;
+  background-color: var(--neutral-white);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.badge {
+  margin-left: 4px;
+  padding: 0 8px;
+  border-radius: 4px;
+  font-weight: var(--fw-extraBold);
+  background-color: var(--primary-blue);
+  color: var(--neutral-white);
+}
+
+.button {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  font-weight: var(--fw-medium);
+  background: transparent;
+  color: var(--neutral-dark-grayish-blue);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  color: var(--primary-blue);
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: var(--fz-body);
+}
+
+.notifications-item {
+  display: flex;
+  align-items: top;
+  padding: 16px;
+  gap: 16px;
+  border-radius: 8px;
+}
+
+.notifications-item.is-not-read {
+  background-color: var(--neutral-very-light-grayish-blue);
+}
+
+.avatar > img {
+  border-radius: 999px;
+  width: 48px;
+  height: 48px;
+}
+
+.notifications-body {
+}
+
+.notifications-body > a {
+  font-weight: var(--fw-extraBold);
+  text-decoration: none;
+  color: #555;
+}
+.notifications-body > a.is-group {
+  color: var(--primary-blue);
+}
+
+.notifications-body > a.notifications-author {
+  color: black;
+}
+
+.notifications-body a:hover {
+  color: var(--primary-blue);
+}
+
+.notifications-footer {
+  color: #444;
+}
+
+.notifications-footer time {
+  color: #777;
+}
+
+.notifications-replied {
+  margin-top: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.notifications-replied:hover {
+  cursor: pointer;
+  background-color: var(--neutral-light-grayish-blue-two);
+}
+
+.notifications-status {
+  display: inline-block;
+  margin-inline: 8px;
+  width: 8px;
+  height: 8px;
+  vertical-align: middle;
+  border-radius: 100%;
+  background-color: red;
+}
+
+@media (min-width: 334px) {
+  #app {
+    margin: 32px auto;
+    padding: 12px 24px;
+    border-radius: 16px;
+    max-width: var(--width-tablet);
+  }
 }
